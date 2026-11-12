@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+/* ── Keyframes personalizados ── */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes slide-left {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* Clases de animación referenciadas desde JSX */
+.anim-overlay  { animation: fade-in   0.15s ease; }
+.anim-modal    { animation: slide-up  0.2s  ease; }
+.anim-toast    { animation: slide-left 0.3s ease; }
+.anim-pulse    { animation: pulse-dot  2s   infinite; }
+
+/* Select options hereda el fondo oscuro en todos los navegadores */
+select option  { background-color: #18181b; }
+
+/* Scroll personalizado */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: #3f3f46; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #52525b; }
